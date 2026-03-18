@@ -1,0 +1,449 @@
+.location-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: transparent;
+    min-height: 100vh;
+    position: relative;
+    color: white;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    background: transparent;
+    padding: 1rem;
+}
+
+.gallery-header h1 {
+    color: white;
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+.gallery-description {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.billboard {
+    background: linear-gradient(135deg, 
+        rgba(102, 126, 234, 0.3) 0%, 
+        rgba(118, 75, 162, 0.3) 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.billboard-screen {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgba(255, 215, 0, 0.3);
+    box-shadow: inset 0 0 30px rgba(255, 215, 0, 0.2);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.game-reveal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0);
+    }
+}
+
+.game-year {
+    color: #ffd700;
+    font-size: 3.5rem;
+    margin: 0.5rem 0;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    font-weight: bold;
+    display: block;
+}
+
+.game-name {
+    color: white;
+    font-size: 2.8rem;
+    margin: 0.5rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+.game-developer {
+    color: #ffd700;
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+.game-genre {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    display: block;
+}
+
+.game-image-container {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 4px solid #ffd700;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.game-image-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+}
+
+.game-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.billboard-welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.billboard-welcome h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.billboard-welcome p {
+    color: #ffd700;
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.years-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.year-tile {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.year-tile:hover {
+    background: rgba(255, 215, 0, 0.25);
+    border-color: rgba(255, 215, 0, 0.5);
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
+}
+
+.year-tile.active {
+    background: rgba(255, 215, 0, 0.35);
+    border-color: rgba(255, 215, 0, 0.8);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.year-number {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.year-tile.active .year-number {
+    color: #ffd700;
+}
+
+.timeline-section {
+    margin-top: 4rem;
+    background: transparent;
+}
+
+.timeline-section h2 {
+    color: white;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+
+.timeline {
+    display: grid;
+    gap: 1rem;
+    background: transparent;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-item:hover {
+    transform: translateX(15px);
+    background: rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 215, 0, 0.3);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-year {
+    background: rgba(102, 126, 234, 0.6);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    backdrop-filter: blur(4px);
+    border-right: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.timeline-content {
+    padding: 1.2rem 1.8rem;
+    background: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.timeline-game-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #ffd700;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+    display: block;
+}
+
+.timeline-game-image:hover {
+    transform: scale(1.1);
+}
+
+.timeline-content div {
+    flex: 1;
+}
+
+.timeline-content h3 {
+    margin: 0 0 0.3rem 0;
+    color: white;
+    font-size: 1.4rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.timeline-content .developer {
+    color: #ffd700;
+    margin: 0 0 0.2rem 0;
+    font-size: 1rem;
+}
+
+.timeline-content .genre {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.loading {
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    gap: 1rem;
+}
+
+.loading::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffd700;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .location-detail {
+        padding: 1rem;
+    }
+
+    .gallery-header h1 {
+        font-size: 2rem;
+    }
+
+    .billboard {
+        padding: 1rem;
+    }
+
+    .billboard-screen {
+        padding: 1.5rem;
+        min-height: 400px;
+    }
+
+    .game-year {
+        font-size: 2.5rem;
+    }
+
+    .game-name {
+        font-size: 2rem;
+    }
+
+    .game-image-container {
+        width: 180px;
+        height: 180px;
+    }
+
+    .years-grid {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        gap: 0.5rem;
+    }
+
+    .year-tile {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .timeline-item {
+        grid-template-columns: 70px 1fr;
+    }
+
+    .timeline-year {
+        font-size: 1.2rem;
+        padding: 0.8rem;
+    }
+
+    .timeline-content {
+        padding: 1rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .timeline-game-image {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .billboard-screen {
+        min-height: 350px;
+        padding: 1rem;
+    }
+
+    .game-year {
+        font-size: 2rem;
+    }
+
+    .game-name {
+        font-size: 1.5rem;
+    }
+
+    .game-image-container {
+        width: 140px;
+        height: 140px;
+    }
+
+    .billboard-welcome h2 {
+        font-size: 1.8rem;
+    }
+
+    .timeline-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .timeline-game-image {
+        margin-bottom: 0.5rem;
+    }
+}
+
+h1, h2, h3, p {
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.billboard-screen > * {
+    width: 100%;
+}
+
+.game-reveal > * {
+    margin: 0.5rem 0;
+}
